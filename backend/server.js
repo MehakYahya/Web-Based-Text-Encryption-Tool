@@ -171,7 +171,7 @@ app.get('/api/health', (req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-    console.log(`🚀 Encryption backend server running on port ${PORT}`);
-    console.log(`📊 API endpoints available at http://localhost:${PORT}/api`);
-    console.log(`🔗 CORS enabled for all origins`);
+    console.log(` Encryption backend server running on port ${PORT}`);
+    console.log(` API endpoints available at http://localhost:${PORT}/api`);
+
 });
