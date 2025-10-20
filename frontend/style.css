@@ -1,0 +1,232 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Times New Roman', Times, serif;
+    background: linear-gradient(135deg, #dbecf0 0%, #187b94 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px; 
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    background: #b2ceb8;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    animation: fadeIn 0.35s ease-in;
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+}
+
+#algorithm{
+    width:300px;
+    display:block;
+    margin: 12px auto; 
+    text-align: center;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: hsl(210, 27%, 20%);
+    margin-bottom: 6px;
+}
+
+header p { font-size: 0.9rem; color: #606f7b;
+margin-bottom: 10px; }
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Input Section */
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: bold;
+    margin-bottom: 2px;
+    color: #2d3748;
+      text-align: center;
+}
+
+textarea, select, input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #e8eef6;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: all 0.18s ease;
+    background-color: #fff9ee;
+    font-family: inherit;
+}
+
+textarea:focus, select:focus, input[type="number"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 36px; /* compact inputs */
+}
+
+.caesar-options {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 20px;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; max-height: 0; }
+    to { opacity: 1; max-height: 200px; }
+}
+
+.button-group { display:flex;gap:8px;justify-content:center;flex-wrap:wrap }
+.btn { padding:10px 12px;border:none;border-radius:8px;font-size:0.95rem;font-weight:700;cursor:pointer;min-width:110px }
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn.encrypt {
+    background:  #187b94;
+    color: #fff;
+}
+.btn.encrypt {
+    background:  #187b94;
+    color: #fff;
+}
+
+.btn.encrypt:hover:not(:disabled) {
+    background: #667eea ;
+    transform: translateY(-2px);
+}
+
+.btn.decrypt {
+    background: #48bb78;
+    color: #fff;
+
+}
+.btn.decrypt {
+    background: #48bb78;
+    color: #fff;
+}
+
+.btn.decrypt:hover:not(:disabled) {
+    background: #38a169;
+    transform: translateY(-2px);
+}
+
+/* Output Section */
+.output-section { display:flex;flex-direction:column;gap:8px }
+.output-container { display:flex;gap:8px }
+
+.output-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.output-column label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #2d3748;
+}
+
+.output-column textarea { flex:1; min-height:56px }
+
+.output-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn.copy {
+    background: #68ad85;
+    color: #fff;
+
+}
+.btn.copy {
+    background: #68ad85;
+    color: #fff;
+}
+
+.btn.copy:hover {
+    background: #316b65;
+    transform: translateY(-2px);
+}
+
+.btn.clear {
+    background: #e53e3e;
+    color: #fff;
+
+}
+.btn.clear {
+    background: #e53e3e;
+    color: #fff;
+}
+
+.btn.clear:hover {
+    background: #c53030;
+    transform: translateY(-2px);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .output-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .button-group, .output-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+}

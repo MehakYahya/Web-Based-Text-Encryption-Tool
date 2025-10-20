@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-Based Text Encryption Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔐 Web-Based Text Encryption Tool</h1>
+            <p>Secure your messages with encryption algorithms</p>
+        </header>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="plainText">Enter Plain Text:</label>
+                    <textarea id="plainText" placeholder="Type your message here" rows="5"></textarea>
+                </div>
+                
+                <div class="input-group">
+                    <label for="algorithm">Select Encryption Algorithm:</label>
+                    <select id="algorithm">
+                        <option value="">-- Choose Algorithm --</option>
+                        <option value="caesar">Caesar Cipher</option>
+                        <option value="base64">Base64 Encoding</option>
+                        <option value="aes">AES Encryption</option>
+                        <option value="sha256">SHA-256 Hash</option>
+                    </select>
+                </div>
+
+                <div class="caesar-options" id="caesarOptions" style="display: none;">
+                    <div class="input-group">
+                        <label for="shift">Shift Value (1-25):</label>
+                        <input type="number" id="shift" min="1" max="25" value="3">
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button id="encryptBtn" class="btn encrypt" aria-label="Encrypt the entered text">🔒 Encrypt Text</button>
+                    <button id="decryptBtn" class="btn decrypt" style="display: none;" aria-label="Decrypt the encrypted text">🔓 Decrypt Text</button>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="output-container">
+                    <div class="output-column">
+                        <label for="cipherText">Encrypted Text:</label>
+                        <textarea id="cipherText" placeholder="Encrypted text " rows="5" readonly></textarea>
+                    </div>
+
+                    <div class="output-column">
+                        <label for="decryptedText">Decrypted Text:</label>
+                        <textarea id="decryptedText" placeholder="Decrypted text " rows="5" readonly></textarea>
+                    </div>
+                </div>
+
+                <div class="output-actions">
+                    <button id="copyBtn" class="btn copy" aria-label="Copy encrypted text to clipboard">📋 Copy to Clipboard</button>
+                    <button id="clearBtn" class="btn clear" aria-label="Clear all text fields">🗑️ Clear All</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
