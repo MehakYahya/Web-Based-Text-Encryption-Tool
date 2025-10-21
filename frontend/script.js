@@ -305,6 +305,7 @@ class EncryptionTool {
     clearAll() {
         document.getElementById('plainText').value = '';
         document.getElementById('cipherText').value = '';
+        document.getElementById('decryptedText').value = '';
         document.getElementById('algorithm').value = '';
         document.getElementById('caesarOptions').style.display = 'none';
         document.getElementById('decryptBtn').style.display = 'none';

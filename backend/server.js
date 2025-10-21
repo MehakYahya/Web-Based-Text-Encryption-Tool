@@ -9,15 +9,12 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-// Data file path
 const DATA_FILE = path.join(__dirname, 'data.json');
 
-// Helper function to read data
 const readData = () => {
     try {
         if (fs.existsSync(DATA_FILE)) {
